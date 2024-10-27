@@ -1,7 +1,6 @@
 from collections import namedtuple
 from datetime import datetime
 import requests
-from bs4 import BeautifulSoup
 
 POSTS = dict()
 
