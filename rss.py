@@ -93,8 +93,8 @@ if __name__ == "__main__":
             r"""<?xml version="1.0" encoding="UTF-8" ?>""",
             r"""<rss version="2.0">""",
             r"""<channel>""",
-            r"""<title>Walmart - Technology</title>""",
-            r"""<description>Walmart - Technology</description>""",
+            r"""<title>Amazon Software Developer Roles</title>""",
+            r"""<description>Amazon Software Developer Roles</description>""",
             r"""<language>en-us</language>""",
             r"""<pubDate>"""
             + NOW.strftime("%a, %d %b %Y %H:%M:%S GMT")
