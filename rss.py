@@ -68,15 +68,20 @@ response = requests.post(
 )
 
 jobs = dict(response.json())['searchHits']
-
 for job in jobs:
+    is_intern = job['fields']['isIntern'][0]
+    is_manager = job['fields']['isManager'][0]
+    preferred_qualifications = job['fields']['preferredQualifications'][0]
+    company_name = job['fields']['companyName'][0]
+    description = job['fields']['description'][0]
     title = job['fields']['title'][0]
-    role = job['fields']['jobRole'][0]
+    job_role = job['fields']['jobRole'][0]
     id = job['fields']['urlNextStep'][0].split("/")[-2]
     link = "https://amazon.jobs/en/jobs/"+id+"/"
     date = job['fields']['updatedDate'][0]
+    full_title = f"{job_role} @ {company_name}"
     if not (link in POSTS.keys()):
-        POSTS[link] = Post(link, title, date)
+        POSTS[link] = Post(link, full_title, date)
 
 STREAM = sorted(
     [POSTS[key] for key in POSTS.keys()], key=lambda x: x.date, reverse=True
