@@ -111,7 +111,7 @@ if __name__ == "__main__":
                     + r"""]]></title><link>"""
                     + x.link
                     + r"""</link><pubDate>"""
-                    + x.date
+                    + datetime.utcfromtimestamp(x.date).strftime('%a, %d %b %Y %H:%M:%S GMT')
                     + r"""</pubDate></item>"""
                     for x in STREAM
                 ]
